@@ -49,3 +49,5 @@ const RouteArr: Array<RouteType> = [
 ##### requset
 - 使用的请求库为umi-reuest
 - [具体使用参照](https://www.npmjs.com/package/umi-request)
+
+*路由已处理ios/android手势，页面跳转动画等统一性*
