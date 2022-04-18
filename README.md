@@ -1,3 +1,5 @@
+### 本模板使用TS
+
 > 文件目录
 > > src
 > > > assets`静态资源文件夹`
@@ -45,3 +47,8 @@ const RouteArr: Array<RouteType> = [
 ##### icont使用
 - 根目录下有一个iconfont.json文件
 - [具体使用参照](https://www.npmjs.com/package/react-native-iconfont-cli)
+
+
+##### requset
+- 使用的请求库为umi-reuest
+- [具体使用参照](https://www.npmjs.com/package/umi-request)
