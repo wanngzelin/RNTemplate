@@ -9,6 +9,8 @@
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
+  "keywords": ["react-native","template"],
+  "homepage": "https://github.com/wanngzelin/RNTemplate",
   "dependencies": {
     "@react-native-masked-view/masked-view": "^0.2.6",
     "@react-navigation/bottom-tabs": "^6.3.1",
