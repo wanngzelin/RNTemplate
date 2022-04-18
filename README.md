@@ -1,23 +1,21 @@
-### 本模板使用TS
+#### 本模板使用TS
+### 使用方法
+```
+npx react-native init ProjectName --template tsrntemp
+```
 
-> 文件目录
-> > src
-> > > assets`静态资源文件夹`
 
-> > > components`公用组件文件夹`
 
-> > > config`配置文件夹`
-
-> > > iconfont`图标字体文件夹`
-
-> > > pages`所有页面文件夹`
-
-> > > route`路由页面文件夹`
-
-> > > types`类型申明文件夹`
-
-> > > utils`工具类文件夹`
-
+- 文件目录
+ - src
+  - assets`静态资源文件夹`
+  - components`公用组件文件夹`
+  - config`配置文件夹`
+  - iconfont`图标字体文件夹`
+  - pages`所有页面文件夹`
+  - route`路由页面文件夹`
+  - types`类型申明文件夹`
+  - utils`工具类文件夹`
 
 
 ##### 新增路由须配置两个地方
@@ -33,7 +31,6 @@ export type RootStackParamList = {
 
 ```
 import BottomTab from "route/BottomTab" //引入所需组件
-
 
 const RouteArr: Array<RouteType> = [
   {
