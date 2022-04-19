@@ -1,4 +1,4 @@
-package com.rntemplate;
+package com.myapp;
 
 import com.facebook.react.ReactActivity;
 import android.os.Bundle;
@@ -11,9 +11,9 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "RNTemplate";
+    return "MyApp";
   }
-
+  
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(null);
