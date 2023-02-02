@@ -1,9 +1,15 @@
-#### 本模板使用TS(RN@0.67.4,navigation@6.X)
-### 使用方法
-```
+## :space_invader: React Native Template TypeScript
+
+## :arrow_forward: 用法
+```sh
 npx react-native init ProjectName --template tsrntemp
 ```
 
+#### React Native <=> Template Version
+
+| React Native | Template |
+| ------------ | -------- |
+| 0.67         | 1.0.\*   |
 
 
 - 文件目录
