@@ -18,7 +18,8 @@ module.exports = {
           "@iconfont": "./src/iconfont"
         }
       }
-    ]
+    ],
+    ["@babel/plugin-proposal-decorators", { "legacy": true }]
   ],
   env:{
     production:{

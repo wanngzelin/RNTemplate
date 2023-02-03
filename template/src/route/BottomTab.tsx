@@ -1,9 +1,9 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { BottomTabParamList } from 'types/routeTypes';
-import Home from 'pages/Home/Container';
-import Mine from 'pages/Mine/Container';
-import { IconIndex, IconMine } from 'iconfont';
+import { BottomTabParamList } from 'types/RouteParamList';
+import Home from 'pages/Home';
+import Mine from 'pages/Mine';
+import IconFont from 'iconfont';
 import color from 'config/color';
 
 const Tab = createBottomTabNavigator<BottomTabParamList>();
@@ -17,12 +17,12 @@ const BottomTab: React.FC = () => {
       <Tab.Screen
         name={'Home'}
         component={Home}
-        options={{ tabBarIcon: ({ focused, color, size }) => <IconIndex size={size} color={color} /> }}
+        options={{ tabBarIcon: ({ color, size }) => <IconFont name='index' size={size} color={color} /> }}
       />
       <Tab.Screen
         name={'Mine'}
         component={Mine}
-        options={{ tabBarIcon: ({ focused, color, size }) => <IconMine size={size} color={color} /> }}
+        options={{ tabBarIcon: ({ color, size }) => <IconFont name='mine' size={size} color={color} /> }}
       />
     </Tab.Navigator>
   )

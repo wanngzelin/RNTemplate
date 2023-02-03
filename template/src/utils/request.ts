@@ -1,3 +1,7 @@
+//请求工具库
+/**
+ * 使用可参照https://www.npmjs.com/package/umi-request
+ */
 import { extend, ResponseError } from 'umi-request';
 
 //错误处理

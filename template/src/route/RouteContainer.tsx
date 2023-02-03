@@ -1,36 +1,28 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { CardStyleInterpolators, createStackNavigator, HeaderStyleInterpolators } from '@react-navigation/stack';
-import { RootStackParamList } from 'types/routeTypes';
-import RouteArr from 'config/routeConfig';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import RouteArr from 'config/routeConfig';
+import { StackParamList } from 'types/RouteParamList';
 
-const Stack = createStackNavigator<RootStackParamList>();
+const Stack = createNativeStackNavigator<StackParamList>()
 
-const RouteContainer: React.FC = () => {
+const RouterContainer: React.FC = () => {
   return (
     <SafeAreaProvider>
       <NavigationContainer>
         <Stack.Navigator
           screenOptions={{
-            gestureEnabled: true,
-            gestureDirection: 'horizontal',
-            headerTitleAlign: 'center',
-            headerMode: 'screen',
-            cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
-            headerStyleInterpolator: HeaderStyleInterpolators.forUIKit,
+            headerBackTitleVisible: false,
+            headerTitleAlign: 'center'
           }}
         >
           {
-            RouteArr.map(item => <Stack.Screen key={item.name} name={item.name} component={item.component} options={item.options} />)
+            RouteArr.map(v => <Stack.Screen key={v.name} name={v.name} component={v.component} options={v.options} />)
           }
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
-
   )
 }
-
-export default RouteContainer
-
-
+export default RouterContainer

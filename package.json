@@ -1,6 +1,6 @@
 {
   "name": "tsrntemp",
-  "version": "1.0.8",
+  "version": "1.1.0",
   "description": "Clean and minimalist React Native template for a quick start with TypeScript.",
   "scripts": {
     "test": "exit 0"
@@ -9,7 +9,6 @@
     "template",
     "template.config.js"
   ],
-
   "keywords": [
     "react-native",
     "typescript",
@@ -17,7 +16,16 @@
     "template",
     "boilerplate"
   ],
-  "author": "wang",
+  "author": {
+    "name": "wangzelin",
+    "url": "https://juejin.cn/user/465848662767367?utm_source=gold_browser_extension"
+  },
+  "contributors": [
+    {
+      "name": "wangzelin",
+      "url": "https://juejin.cn/user/465848662767367?utm_source=gold_browser_extension"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/wanngzelin/RNTemplate/issues"

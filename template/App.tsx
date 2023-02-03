@@ -1,11 +1,18 @@
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ */
 
-import 'react-native-gesture-handler';
 import React from 'react';
-import RouteContainer from 'route/RouteContainer';
+import RouterContainer from 'route/RouteContainer';
 
-const App = () => {
-  return <RouteContainer />
-};
 
+function App(): JSX.Element {
+  return (
+    <RouterContainer />
+  );
+}
 
 export default App;

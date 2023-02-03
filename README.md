@@ -9,8 +9,10 @@ npx react-native init ProjectName --template tsrntemp
 
 | React Native | Template |
 | ------------ | -------- |
+| 0.71         | 1.1.\*   |
 | 0.67         | 1.0.\*   |
 
+`本项目默认为TS搭建，集成路由，缓存，请求工具、icon工具`
 
 - 文件目录
  - src
@@ -23,29 +25,8 @@ npx react-native init ProjectName --template tsrntemp
   - src/types`类型申明文件夹`
   - src/utils`工具类文件夹`
 
-
-##### 新增路由须配置两个地方
-- types/routeTypes
-
-```
-//添加页面地址，以及页面所需的参数
-export type RootStackParamList = {
-  BottomTab: undefined;
-}
-```
-- config/routeConfig.ts
-
-```
-import BottomTab from "route/BottomTab" //引入所需组件
-
-const RouteArr: Array<RouteType> = [
-  {
-    name: 'BottomTab', //匹配第一步配置时的名称
-    component: BottomTab,//引入的组件
-    options: { headerShown: false }//页面所需的额外配置
-  }
-]
-```
+### react-navigation
+- [具体使用参照](https://reactnavigation.org/docs/getting-started)
 
 ##### icont使用
 - 根目录下有一个iconfont.json文件
@@ -56,8 +37,12 @@ const RouteArr: Array<RouteType> = [
 - 使用的请求库为umi-reuest
 - [具体使用参照](https://www.npmjs.com/package/umi-request)
 
+##### 缓存
+- 使用utils/storage
+- [具体使用参照](https://react-native-async-storage.github.io/async-storage/docs/usage)
+
+
 ##### 适配
 - 使用的react-native-size-matters
 - [具体使用参照](https://www.npmjs.com/package/react-native-size-matters)
 
-*路由已处理ios/android手势，页面跳转动画等统一性*
