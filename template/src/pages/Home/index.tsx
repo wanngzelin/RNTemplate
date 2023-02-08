@@ -7,6 +7,7 @@ export default class Home extends React.Component<any, any> {
   }
 
   public render() {
+    console.log(Text.prototype)
     return (
       <View>
          <Text>Home Component</Text>
