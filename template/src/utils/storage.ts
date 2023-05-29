@@ -18,7 +18,8 @@ export default class Storage {
 
   //保存数据
   static async setItem(key: string, val: string) {
-    return AsyncStorage.setItem(key, val)
+    const value = typeof val == 'string' ? val : JSON.stringify(val)
+    return AsyncStorage.setItem(key, value)
   }
 
   //更新保存数据

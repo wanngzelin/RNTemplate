@@ -5,5 +5,6 @@ export type BottomTabParamList = {
 }
 
 export type StackParamList = {
-  BottomTab: undefined
+  BottomTab: undefined,
+  Login:undefined
 }

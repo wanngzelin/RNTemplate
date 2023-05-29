@@ -1,19 +1,34 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { AuthContext } from 'route/RouteContainer';
+import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
+import { BottomTabParamList } from 'types/RouteParamList'
 
+const Mine: React.FC<BottomTabScreenProps<BottomTabParamList>> = ({ navigation, route }) => {
 
+  const insets = useSafeAreaInsets();
+  const { signOut } = React.useContext(AuthContext);
+  
+  return (
+    <View
+      style={{
+        flex: 1,
+        justifyContent: 'space-between',
+        alignItems: 'center',
 
-export default class Mine extends React.Component<any, any> {
-  constructor(props: any) {
-    super(props);
-  }
-
-  public render() {
-    return (
-      <View>
-        <Text>Mine Component</Text>
-      </View>
-    );
-  }
+        // Paddings to handle safe area
+        paddingTop: insets.top,
+        paddingBottom: insets.bottom,
+        paddingLeft: insets.left,
+        paddingRight: insets.right,
+      }}
+    >
+      <TouchableOpacity onPress={signOut}>
+        <Text>退出登录</Text>
+      </TouchableOpacity>
+    </View>
+  );
 }
 
+export default Mine
