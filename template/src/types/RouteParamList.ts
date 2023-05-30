@@ -2,9 +2,9 @@
 export type BottomTabParamList = {
   Home: undefined;
   Mine: undefined;
-}
+};
 
 export type StackParamList = {
-  BottomTab: undefined,
-  Login:undefined
-}
+  BottomTab: undefined;
+  Login: undefined;
+};

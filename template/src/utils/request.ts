@@ -2,7 +2,7 @@
 /**
  * 使用可参照https://www.npmjs.com/package/umi-request
  */
-import { extend, ResponseError } from 'umi-request';
+import {extend, ResponseError} from 'umi-request';
 
 //错误处理
 const errorHandler = (error: ResponseError) => {
@@ -17,13 +17,12 @@ const errorHandler = (error: ResponseError) => {
     // The request was made but no response was received or error occurs when setting up the request.
     console.log(error.message);
   }
-}
+};
 
 const request = extend({
   // prefix:'',
   timeout: 1000,
-  errorHandler
-})
+  errorHandler,
+});
 
-
-export default request
+export default request;

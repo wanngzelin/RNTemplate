@@ -1,10 +1,10 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
-import { BottomTabParamList } from 'types/RouteParamList'
+import {View, Text} from 'react-native';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import {BottomTabScreenProps} from '@react-navigation/bottom-tabs';
+import {BottomTabParamList} from 'types/RouteParamList';
 
-const Home: React.FC<BottomTabScreenProps<BottomTabParamList>> = ({ navigation, route }) => {
+const Home: React.FC<BottomTabScreenProps<BottomTabParamList>> = () => {
   const insets = useSafeAreaInsets();
 
   return (
@@ -19,11 +19,10 @@ const Home: React.FC<BottomTabScreenProps<BottomTabParamList>> = ({ navigation, 
         paddingBottom: insets.bottom,
         paddingLeft: insets.left,
         paddingRight: insets.right,
-      }}
-    >
+      }}>
       <Text>Home Component</Text>
     </View>
   );
-}
+};
 
-export default Home
+export default Home;

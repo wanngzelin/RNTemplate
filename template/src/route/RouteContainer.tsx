@@ -1,13 +1,13 @@
-import React, { useReducer, useMemo, useEffect } from 'react';
-import { StyleSheet, View, ActivityIndicator } from 'react-native';
-import { NavigationContainer, getFocusedRouteNameFromRoute } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import BottomTab from "route/BottomTab"
-import Login from "pages/Login"
-import { StackParamList } from 'types/RouteParamList';
+import React, {useReducer, useMemo, useEffect} from 'react';
+import {StyleSheet, View, ActivityIndicator} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+import Login from 'pages/Login';
+import {StackParamList} from 'types/RouteParamList';
 import Storage from 'utils/storage';
 import color from 'config/color';
+import RouteArr from 'config/routeArr';
 
 const Stack = createNativeStackNavigator<StackParamList>();
 
@@ -17,12 +17,8 @@ export const AuthContext = React.createContext<{
   signOut: () => void;
 }>({
   isSignedIn: false,
-  signIn: () => {
-
-  },
-  signOut: () => {
-
-  },
+  signIn: () => {},
+  signOut: () => {},
 });
 
 type State = {
@@ -32,10 +28,11 @@ type State = {
 };
 
 type Action =
-  | { type: 'RESTORE_TOKEN'; user: undefined | string }
-  | { type: 'SIGN_IN'; user: string }
-  | { type: 'SIGN_OUT' };
+  | {type: 'RESTORE_TOKEN'; user: undefined | string}
+  | {type: 'SIGN_IN'; user: string}
+  | {type: 'SIGN_OUT'};
 
+// APP初始化加载登录信息
 const SplashScreen = () => {
   return (
     <View style={styles.content}>
@@ -45,7 +42,6 @@ const SplashScreen = () => {
 };
 
 const RouterContainer: React.FC = () => {
-
   // 初始化登录信息
   const [state, dispatch] = useReducer<React.Reducer<State, Action>>(
     (prevState, action) => {
@@ -76,16 +72,18 @@ const RouterContainer: React.FC = () => {
       isLoading: true,
       isSignout: false,
       userInfo: undefined,
-    }
+    },
   );
 
   // 获取当前登录信息
   useEffect(() => {
     Storage.getItem('userInfo').then(res => {
-      if (!res) return dispatch({ type: 'SIGN_OUT' })
-      return dispatch({ type: 'SIGN_IN', user: res })
-    })
-  }, [])
+      if (!res) {
+        return dispatch({type: 'SIGN_OUT'});
+      }
+      return dispatch({type: 'SIGN_IN', user: res});
+    });
+  }, []);
 
   const isSignedIn = state.userInfo !== undefined;
 
@@ -93,15 +91,15 @@ const RouterContainer: React.FC = () => {
     () => ({
       isSignedIn,
       signIn: (T: any) => {
-        dispatch({ type: 'SIGN_IN', user: T })
-        Storage.setItem('userInfo', T)
+        dispatch({type: 'SIGN_IN', user: T});
+        Storage.setItem('userInfo', T);
       },
       signOut: () => {
-        dispatch({ type: 'SIGN_OUT' })
-        Storage.clearItem('userInfo')
-      }
+        dispatch({type: 'SIGN_OUT'});
+        Storage.clearItem('userInfo');
+      },
     }),
-    [isSignedIn]
+    [isSignedIn],
   );
 
   if (state.isLoading) {
@@ -117,39 +115,35 @@ const RouterContainer: React.FC = () => {
               headerBackTitleVisible: false,
               headerTitleAlign: 'center',
               headerStyle: {
-                backgroundColor: color.primary[400]
-              }
-            }}
-          >
-            {
-              isSignedIn ?
-                <Stack.Screen name='BottomTab' component={BottomTab} options={
-                  ({ route }) => {
-                    let routeName = getFocusedRouteNameFromRoute(route) ?? '首页';
-                    switch (routeName) {
-                      case 'Home':
-                        routeName = '首页';
-                        break;
-                      case 'Mine':
-                        routeName = '我的';
-                        break;
-                      default:
-                        routeName = '首页';
-                        break;
-                    }
-                    return {
-                      headerTitle: routeName
-                    }
-                  }
-                } /> :
-                <Stack.Screen name='Login' component={Login} options={{ headerTitle: '登录' }} />
-            }
+                backgroundColor: color.primary[400],
+              },
+            }}>
+            {isSignedIn ? (
+              <Stack.Group>
+                {RouteArr.map(v => (
+                  <Stack.Screen
+                    key={v.name}
+                    name={v.name}
+                    component={v.component}
+                    options={v.options ?? {}}
+                  />
+                ))}
+              </Stack.Group>
+            ) : (
+              <Stack.Group>
+                <Stack.Screen
+                  name="Login"
+                  component={Login}
+                  options={{headerTitle: '登录'}}
+                />
+              </Stack.Group>
+            )}
           </Stack.Navigator>
         </NavigationContainer>
       </SafeAreaProvider>
     </AuthContext.Provider>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   content: {
@@ -159,4 +153,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default RouterContainer
+export default RouterContainer;
