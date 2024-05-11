@@ -14,18 +14,27 @@
     "typescript",
     "jest",
     "template",
-    "boilerplate"
+    "boilerplate",
+    "react-native-typescript-template",
+    "react-native-template-typescript"
   ],
+  "engines": {
+    "node": ">=16"
+  },
   "author": {
     "name": "wangzelin",
-    "url": "https://juejin.cn/user/465848662767367?utm_source=gold_browser_extension"
+    "email": "447867010@qq.com"
   },
   "contributors": [
     {
       "name": "wangzelin",
-      "url": "https://juejin.cn/user/465848662767367?utm_source=gold_browser_extension"
+      "email": "447867010@qq.com"
     }
   ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "provenance": true
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/wanngzelin/RNTemplate/issues"
