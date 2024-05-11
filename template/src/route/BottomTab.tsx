@@ -13,6 +13,7 @@ const BottomTab: React.FC = () => {
     <Tab.Navigator
       screenOptions={{
         tabBarActiveTintColor: color.primary[400],
+        headerTitleAlign:'center'
       }}
       backBehavior={'none'}>
       <Tab.Screen
