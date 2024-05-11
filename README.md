@@ -2,7 +2,7 @@
 
 English | [简体中文](./README_zh-CN.md)
 
-## :arrow_forward: 用法
+## :arrow_forward: usage
 ```sh
 npx react-native init ProjectName --template tsrntemp
 ```
@@ -17,7 +17,7 @@ npx react-native init ProjectName --template tsrntemp
 
 `The default of this project is TS building, integrated routing, caching, request tool and icon tool`
 
-- 文件目录
+- file directory
  - src
   - src/assets`Static resource folder`
   - src/components`Public component folder`
