@@ -1,3 +1,5 @@
 import {MMKV} from 'react-native-mmkv';
 
-export default new MMKV();
+const Storage = new MMKV();
+
+export {Storage};

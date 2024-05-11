@@ -27,6 +27,7 @@ npx react-native init ProjectName --template tsrntemp
   - src/route`Route the page folder`
   - src/types`Type statement folder`
   - src/utils`Tool Class Folders`
+  - src/requestUtils`Request tool base class`
 
 ### react-navigation
 - [Use reference](https://reactnavigation.org/docs/getting-started)

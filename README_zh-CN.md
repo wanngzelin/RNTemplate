@@ -27,6 +27,7 @@ npx react-native init ProjectName --template tsrntemp
   - src/route`路由页面文件夹`
   - src/types`类型申明文件夹`
   - src/utils`工具类文件夹`
+  - src/requestUtils`请求工具基类，支持泛型`
 
 ### react-navigation
 - [具体使用参照](https://reactnavigation.org/docs/getting-started)
