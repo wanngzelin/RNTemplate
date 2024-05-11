@@ -1,12 +1,9 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {BottomTabScreenProps} from '@react-navigation/bottom-tabs';
-import {BottomTabParamList} from 'types/RouteParamList';
 
-const Home: React.FC<BottomTabScreenProps<BottomTabParamList>> = () => {
+const Home: React.FC = () => {
   const insets = useSafeAreaInsets();
-
   return (
     <View
       style={{

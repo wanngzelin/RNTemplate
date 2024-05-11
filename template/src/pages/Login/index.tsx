@@ -1,16 +1,11 @@
 import React from 'react';
-import {
-  View,
-  TextInput,
-  StyleSheet,
-  TouchableOpacity,
-  Text,
-} from 'react-native';
-import color from 'config/color';
-import {AuthContext} from 'route/RouteContainer';
+import {View, TextInput, StyleSheet, Text, Pressable} from 'react-native';
+import {UserContext} from '@/serviceType';
+import {color} from '@/config';
+import {AppScreenProps} from '@/types';
 
-const Login: React.FC = () => {
-  const {signIn} = React.useContext(AuthContext);
+const Login: React.FC<AppScreenProps<'Login'>> = () => {
+  const {signIn} = React.useContext(UserContext);
   return (
     <View style={styles.content}>
       <TextInput placeholder="Username" style={[styles.input]} />
@@ -19,11 +14,9 @@ const Login: React.FC = () => {
         secureTextEntry
         style={[styles.input]}
       />
-      <TouchableOpacity
-        style={styles.btn}
-        onPress={() => signIn({userInfo: 'xxx'})}>
+      <Pressable style={styles.btn} onPress={() => signIn({userInfo: 'xxx'})}>
         <Text style={styles.text}>登录</Text>
-      </TouchableOpacity>
+      </Pressable>
     </View>
   );
 };
@@ -39,7 +32,6 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 3,
     borderWidth: StyleSheet.hairlineWidth,
-    borderColor: color.primary[400],
   },
   button: {
     margin: 8,

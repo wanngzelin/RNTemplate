@@ -1,13 +1,11 @@
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View, Text, Pressable} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {AuthContext} from 'route/RouteContainer';
-import {BottomTabScreenProps} from '@react-navigation/bottom-tabs';
-import {BottomTabParamList} from 'types/RouteParamList';
+import {UserContext} from '@/serviceType';
 
-const Mine: React.FC<BottomTabScreenProps<BottomTabParamList>> = () => {
+const Mine: React.FC = () => {
   const insets = useSafeAreaInsets();
-  const {signOut} = React.useContext(AuthContext);
+  const {signOut} = React.useContext(UserContext);
 
   return (
     <View
@@ -22,9 +20,9 @@ const Mine: React.FC<BottomTabScreenProps<BottomTabParamList>> = () => {
         paddingLeft: insets.left,
         paddingRight: insets.right,
       }}>
-      <TouchableOpacity onPress={signOut}>
+      <Pressable onPress={signOut}>
         <Text>退出登录</Text>
-      </TouchableOpacity>
+      </Pressable>
     </View>
   );
 };

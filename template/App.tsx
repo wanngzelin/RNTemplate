@@ -4,15 +4,12 @@
  *
  * @format
  */
-
+import 'react-native-gesture-handler';
 import React from 'react';
-import RouterContainer from 'route/RouteContainer';
+import RouterContainer from '@/route/RouterContainer';
 
-
-function App(): JSX.Element {
-  return (
-    <RouterContainer />
-  );
-}
+const App: React.FC = () => {
+  return <RouterContainer />;
+};
 
 export default App;
