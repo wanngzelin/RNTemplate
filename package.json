@@ -1,7 +1,7 @@
 {
   "name": "tsrntemp",
-  "version": "1.2.4",
-  "description": "Clean and minimalist React Native template for a quick start with TypeScript.",
+  "version": "1.2.5",
+  "description": "react-native模版项目,通过官方脚手架快速搭建项目,已配置好路由,请求库,图标,缓存等常用工具。",
   "scripts": {
     "test": "exit 0"
   },
@@ -11,6 +11,7 @@
   ],
   "keywords": [
     "react-native",
+    "react-native-cli",
     "typescript",
     "jest",
     "template",

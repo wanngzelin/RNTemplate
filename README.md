@@ -1,6 +1,6 @@
 ## :space_invader: React Native Template TypeScript
 
-English | [简体中文](./README_zh-CN.md)
+English | [简体中文](https://github.com/wanngzelin/RNTemplate/blob/master/README_zh-CN.md)
 
 ## :arrow_forward: usage
 ```sh
