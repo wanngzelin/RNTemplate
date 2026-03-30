@@ -4,16 +4,16 @@ English | [简体中文](https://github.com/wanngzelin/RNTemplate/blob/master/RE
 
 ## :arrow_forward: usage
 ```sh
-npx react-native init ProjectName --template tsrntemp
+npx @react-native-community/cli@11.0.0 init ProjectName --template tsrntemp
 ```
 
 #### React Native <=> Template Version
 
-| React Native | Template |
-| ------------ | -------- |
-| 0.72         | 1.2.\*   |
-| 0.71         | 1.1.\*   |
-| 0.67         | 1.0.\*   |
+| React Native | Template | cli|
+| ------------ | -------- |-------- |
+| 0.72         | 1.2.\*   |npx @react-native-community/cli@11.0.0 init ProjectName --template tsrntemp|
+| 0.71         | 1.1.\*   |npx @react-native-community/cli@11.0.0 init ProjectName --template tsrntemp@1.1.*|
+| 0.67         | 1.0.\*   |npx @react-native-community/cli@6.0.0 init ProjectName --template tsrntemp@1.0.*|
 
 `The default of this project is TS building, integrated routing, caching, request tool and icon tool`
 

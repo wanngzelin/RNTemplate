@@ -4,16 +4,16 @@
 
 ## :arrow_forward: 用法
 ```sh
-npx react-native init ProjectName --template tsrntemp
+npx @react-native-community/cli@11.0.0 init ProjectName --template tsrntemp
 ```
 
 #### React Native <=> Template Version
 
-| React Native | Template |
-| ------------ | -------- |
-| 0.72         | 1.2.\*   |
-| 0.71         | 1.1.\*   |
-| 0.67         | 1.0.\*   |
+| React Native | Template | cli|
+| ------------ | -------- |-------- |
+| 0.72         | 1.2.\*   |npx @react-native-community/cli@11.0.0 init ProjectName --template tsrntemp|
+| 0.71         | 1.1.\*   |npx @react-native-community/cli@11.0.0 init ProjectName --template tsrntemp@1.1.*|
+| 0.67         | 1.0.\*   |npx @react-native-community/cli@6.0.0 init ProjectName --template tsrntemp@1.0.*|
 
 `本项目默认为TS搭建，集成路由，缓存，请求工具、icon工具`
 
